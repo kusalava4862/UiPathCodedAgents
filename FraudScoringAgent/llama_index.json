@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "workflows": {
+    "Fraud-Detection-agent": "Fraud_Detection.py:workflow"
+  },
+  "env": ".env"
+}
