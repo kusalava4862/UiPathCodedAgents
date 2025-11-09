@@ -1,0 +1,137 @@
+{
+    "entryPoints": [
+        {
+            "filePath": "validate-coding-agent",
+            "uniqueId": "e11546a2-4f8b-4aad-8eaa-468f017c9621",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "claim_data": {
+                        "title": "Claim Data",
+                        "type": "string"
+                    },
+                    "discharge_summary": {
+                        "title": "Discharge Summary",
+                        "type": "string"
+                    },
+                    "provider_email": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "claim_data",
+                    "discharge_summary",
+                    "provider_email"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "claim_valid": {
+                        "default": null,
+                        "title": "Claim Valid",
+                        "type": "boolean"
+                    },
+                    "justification": {
+                        "default": null,
+                        "title": "Justification",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            }
+        },
+        {
+            "filePath": "validate-policy-terms-agent",
+            "uniqueId": "617fb9ee-8893-4221-8da7-4440c12accb9",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "claim_data": {
+                        "title": "Claim Data",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "claim_data"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "claim_valid": {
+                        "default": null,
+                        "title": "Claim Valid",
+                        "type": "boolean"
+                    },
+                    "justification": {
+                        "default": null,
+                        "title": "Justification",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            }
+        },
+        {
+            "filePath": "payout-estimation-agent",
+            "uniqueId": "f68274ee-9100-46a9-8e24-27ab21278574",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "claim": {
+                        "title": "Claim",
+                        "type": "string"
+                    },
+                    "ProviderEmailAddress": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "claim",
+                    "ProviderEmailAddress"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "html_email_body": {
+                        "default": null,
+                        "title": "Html Email Body",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            }
+        }
+    ],
+    "bindings": {
+        "version": "2.0",
+        "resources": [
+            {
+                "resource": "process",
+                "key": "process_name.uipath_folder_asset_name",
+                "value": {
+                    "name": {
+                        "defaultValue": "process_name",
+                        "isExpression": true,
+                        "displayName": "Name"
+                    },
+                    "folderPath": {
+                        "defaultValue": "uipath_folder_asset_name",
+                        "isExpression": true,
+                        "displayName": "Folder Path"
+                    }
+                },
+                "metadata": {
+                    "ActivityName": "invoke_async",
+                    "BindingsVersion": "2.2",
+                    "DisplayLabel": "FullName"
+                }
+            }
+        ]
+    }
+}

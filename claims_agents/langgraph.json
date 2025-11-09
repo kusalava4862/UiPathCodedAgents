@@ -1,0 +1,9 @@
+{
+    "dependencies": ["."],
+    "graphs": {
+      "validate-coding-agent": "./validate_cpt_icd_codes.py:graph",
+      "validate-policy-terms-agent": "./validate_policy_terms.py:graph",
+      "payout-estimation-agent": "./payout_estimation_agent.py:graph"
+    },
+    "env": ".env"
+  }

@@ -1,0 +1,10 @@
+[project]
+name = "validate-coding-agent"
+version = "0.0.13"
+description = "validate-coding-agent"
+authors = [{ name = "John Doe", email = "john.doe@myemail.com" }]
+dependencies = [
+    "uipath-langchain>=0.0.106",
+    "langchain-anthropic>=0.3.8",
+]
+requires-python = ">=3.10"
